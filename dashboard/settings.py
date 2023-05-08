@@ -130,10 +130,10 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 #Add STATICFILES_FINDERS
-STATICFILES_FINDERS = [
-    'django_plotly_dash.finders.DashAssetFinder',
-    'django_plotly_dash.finders.DashComponentFinder'
-]
+# STATICFILES_FINDERS = [
+#     'django_plotly_dash.finders.DashAssetFinder',
+#     'django_plotly_dash.finders.DashComponentFinder'
+# ]
 
 #Add PLOTLY_COMPONENTS
 PLOTLY_COMPONENTS = [
