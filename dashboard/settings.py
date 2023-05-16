@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'fire.apps.FireConfig',
     'django_plotly_dash.apps.DjangoPlotlyDashConfig',
+    'portfolio.apps.PortfolioConfig',  # This object was created for us in /catalog/apps.py
 ]
 
 MIDDLEWARE = [

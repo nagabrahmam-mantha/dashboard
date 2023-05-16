@@ -20,10 +20,20 @@ from django.urls import include
 from django.views.generic import RedirectView
 from django.conf import settings
 from django.conf.urls.static import static
+from ninja import NinjaAPI
+
+api = NinjaAPI()
+
+@api.get("/add")
+def add(request, a: int, b: int):
+    return {"result": a + b}
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('fire/', include('fire.urls')),
-    path('', RedirectView.as_view(url='fire/')),
+    # path('', RedirectView.as_view(url='fire/')),
     path('django_plotly_dash/', include('django_plotly_dash.urls')),
+    path("api/", api.urls),
+  path('portfolio/', include('portfolio.urls')),
+  # path('', RedirectView.as_view(url='portfolio/')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
